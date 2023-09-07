@@ -13,7 +13,14 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  
+  //whenever you have a 'magic' number in your code, put it here and give it a name. Otherwise... it's just a random number!
+  public static class DriveConstants{
+    public static final int 
+        FL_ID = 10,
+        FR_ID = 11,
+        BL_ID = 12,
+        BR_ID = 13;
+  }
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }

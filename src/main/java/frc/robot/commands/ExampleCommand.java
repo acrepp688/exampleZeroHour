@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -20,6 +21,7 @@ public class ExampleCommand extends CommandBase {
   public ExampleCommand(ExampleSubsystem subsystem) {
     m_subsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
+    //Will not run without the ExampleSubsystem. If it DID, it'd CRASH!
     addRequirements(subsystem);
   }
 
@@ -29,15 +31,23 @@ public class ExampleCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() { //Ran a TON, as this command has been set to the default, and therefore is CONSTANTLY checked/on.
+    double left = RobotContainer.m_driverController.getLeftY();
+    double right = RobotContainer.m_driverController.getRightY();
+    m_subsystem.tankDrive(left,right);
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    //When the command ends, run this code. Example
+    //m_subsystem.tankDrive(0,0);
+  }
+
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return false; //Stop this commmand. We don't want to do this, however, because we never want driving to stop.
   }
 }
