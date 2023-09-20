@@ -5,8 +5,8 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.Auto.Autos;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -21,16 +21,17 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  private final Command Auto = new Autos(m_exampleSubsystem);
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   public final static XboxController m_driverController =
-      new XboxController(OperatorConstants.kDriverControllerPort);
+    new XboxController(OperatorConstants.kDriverControllerPort); //check the constants!!!1!!11!
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
-  public RobotContainer() {
+  public RobotContainer() { //called... A TON.
+    m_exampleSubsystem.setDefaultCommand(new ExampleCommand(m_exampleSubsystem)); //set the command to AlWAYS run.
     // Configure the trigger bindings
     configureBindings();
-    m_exampleSubsystem.setDefaultCommand(new ExampleCommand(m_exampleSubsystem)); //make  the ExampleCommand run continuously.
   }
 
   /**
@@ -43,6 +44,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
+
   }
 
   /**
@@ -52,6 +54,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    return Auto;
   }
 }

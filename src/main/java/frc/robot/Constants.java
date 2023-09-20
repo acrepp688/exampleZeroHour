@@ -12,16 +12,23 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
+
 public final class Constants {
-  //whenever you have a 'magic' number in your code, put it here and give it a name. Otherwise... it's just a random number!
   public static class DriveConstants{
+    //anything here is imported to ExampleSubsystem
     public static final int 
-        FL_ID = 10,
-        FR_ID = 11,
-        BL_ID = 12,
-        BR_ID = 13;
-  }
+    FL_ID = 10, 
+    FR_ID = 11,
+    BL_ID = 12,
+    BR_ID = 13;
+
+    static double wheelDiameter = 6;
+    static double wheelCircumfrence = wheelDiameter * Math.PI;
+    static double gearRatios = 1/22.67; // this changes depending on the robot
+    public static final double motorConversionFactor = wheelCircumfrence * gearRatios;
+
+  } 
   public static class OperatorConstants {
-    public static final int kDriverControllerPort = 0;
+    public static final int kDriverControllerPort = 0; //what 'port' is the xbox controller on? found in DRIVER STATION
   }
 }
