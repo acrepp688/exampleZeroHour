@@ -5,6 +5,7 @@
 package frc.robot.subsystems; //we are LOCATED UNDER the robot folder, and the subsys.
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
+import com.revrobotics.CANSparkMax.IdleMode;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -50,6 +51,20 @@ public class ExampleSubsystem extends SubsystemBase { //create a subsystem
   public double getDrivePos() {
     double avgEnc = (eLFront.getPosition() + eRFront.getPosition())/2;
     return avgEnc;
+  }
+
+  public void motorBrake() {
+    frontLeft.setIdleMode(IdleMode.kBrake);
+    frontRight.setIdleMode(IdleMode.kBrake);
+    backLeft.setIdleMode(IdleMode.kBrake);
+    backRight.setIdleMode(IdleMode.kBrake);
+  }
+
+  public void motorCoast() {
+    frontLeft.setIdleMode(IdleMode.kCoast);
+    frontRight.setIdleMode(IdleMode.kCoast);
+    backLeft.setIdleMode(IdleMode.kCoast);
+    backRight.setIdleMode(IdleMode.kCoast);
   }
 
   public void resetEncoders() {

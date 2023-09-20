@@ -21,7 +21,7 @@ public final class Constants {
     FR_ID = 11,
     BL_ID = 12,
     BR_ID = 13;
-
+    
     static double wheelDiameter = 6;
     static double wheelCircumfrence = wheelDiameter * Math.PI;
     static double gearRatios = 1/22.67; // this changes depending on the robot
@@ -31,4 +31,10 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0; //what 'port' is the xbox controller on? found in DRIVER STATION
   }
+  public static class IntakeConstants {
+    public static final int
+    intakeID = 20,
+    intakeID2 = 21;
+  }
+
 }
