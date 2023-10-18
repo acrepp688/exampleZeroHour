@@ -4,13 +4,13 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.ExampleSubsystem;
 
-public class encDriveA extends CommandBase {
+public class encDriveB extends CommandBase {
     private final ExampleSubsystem driveS;
     PIDController drivePID = new PIDController(0.01, 0, 0);
     double desired;
     boolean isFinished = false;
     
-    public encDriveA(ExampleSubsystem subsystem, double desDis) {
+    public encDriveB(ExampleSubsystem subsystem, double desDis) {
         driveS = subsystem;
         desired = desDis; //desired in inches
         addRequirements(subsystem);
@@ -25,7 +25,7 @@ public class encDriveA extends CommandBase {
     @Override
     public void execute() {
         double autoDriveSpeed = drivePID.calculate(driveS.getDrivePos(), desired);
-        driveS.tankDrive(autoDriveSpeed, autoDriveSpeed);
+        driveS.tankDrive(-autoDriveSpeed, autoDriveSpeed);
         if (Math.abs(drivePID.getPositionError()) < 0.1) {
             driveS.tankDrive(0,0);
             isFinished = true;

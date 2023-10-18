@@ -34,7 +34,9 @@ public final class Constants {
   public static class IntakeConstants {
     public static final int
     intakeID = 20,
-    intakeID2 = 21;
+    intakeID2 = 21,
+    intakeID3 = 22,
+    intakeID4 = 23;
   }
 
 }
