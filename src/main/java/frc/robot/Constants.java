@@ -21,7 +21,13 @@ public final class Constants {
     FR_ID = 11,
     BL_ID = 12,
     BR_ID = 13;
+<<<<<<< Updated upstream
     
+=======
+
+
+
+>>>>>>> Stashed changes
     static double wheelDiameter = 6;
     static double wheelCircumfrence = wheelDiameter * Math.PI;
     static double gearRatios = 1/22.67; // this changes depending on the robot
@@ -34,9 +40,14 @@ public final class Constants {
   public static class IntakeConstants {
     public static final int
     intakeID = 20,
+<<<<<<< Updated upstream
     intakeID2 = 21,
     intakeID3 = 22,
     intakeID4 = 23;
   }
 
+=======
+    intakeID2 = 21;
+  }
+>>>>>>> Stashed changes
 }

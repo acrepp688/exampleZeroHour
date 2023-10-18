@@ -1,4 +1,5 @@
 package frc.robot.subsystems;
+<<<<<<< Updated upstream
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -81,4 +82,18 @@ public class intakeS extends SubsystemBase {
         inOut2Encoder.setPosition(0);
         squeezeEncoder.setPosition(0);
       }
+=======
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.revrobotics.CANSparkMax;
+import frc.robot.Constants;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+public class intakeS extends SubsystemBase {
+    public CANSparkMax intakeMotor = new CANSparkMax(Constants.IntakeConstants.intakeID, MotorType.kBrushless); 
+    public CANSparkMax intakeMotor2 = new CANSparkMax(Constants.IntakeConstants.intakeID2, MotorType.kBrushless);
+
+    public intakeS() {
+
+    }
+>>>>>>> Stashed changes
 }

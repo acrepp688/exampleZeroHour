@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.CommandBase; //we are a commandbase, using methods
 import edu.wpi.first.wpilibj2.command.SubsystemBase; //duh
 import frc.robot.Constants;
+import com.revrobotics.CANSparkMax.IdleMode;
 //  typing a . means going inside another {}
 //public means it can be accessed by other files. 
 public class ExampleSubsystem extends SubsystemBase { //create a subsystem
@@ -59,6 +60,7 @@ public class ExampleSubsystem extends SubsystemBase { //create a subsystem
     backLeft.setIdleMode(IdleMode.kBrake);
     backRight.setIdleMode(IdleMode.kBrake);
   }
+<<<<<<< Updated upstream
 
   public void motorCoast() {
     frontLeft.setIdleMode(IdleMode.kCoast);
@@ -67,6 +69,8 @@ public class ExampleSubsystem extends SubsystemBase { //create a subsystem
     backRight.setIdleMode(IdleMode.kCoast);
   }
 
+=======
+>>>>>>> Stashed changes
   public void resetEncoders() {
     eLFront.setPosition(0);
     eRFront.setPosition(0);
