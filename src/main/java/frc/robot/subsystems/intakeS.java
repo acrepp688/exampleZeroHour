@@ -44,12 +44,12 @@ public class intakeS extends SubsystemBase {
 
 
 
-    public void moveInOutIn(double speed){
+    public void moveInOutIn(double speed){ //This moves the inOutMotors in which means it spins the wheels on the intake and pulls an object in
         inOutMotor1.set(speed);
         inOutMotor2.set(speed);
     }
 
-    public void moveInOutOut(double speed){
+    public void moveInOutOut(double speed){ //This moves the inOutMotors out which means it spins the wheels on the intake and shoots the object
         inOutMotor1.set(speed);
         inOutMotor2.set(speed);
     }
