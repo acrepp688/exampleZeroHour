@@ -7,13 +7,8 @@ import edu.wpi.first.math.controller.PIDController;
 
 public class encDriveA extends CommandBase {
     private final ExampleSubsystem driveS;
-<<<<<<< Updated upstream
     PIDController drivePID = new PIDController(0.01, 0, 0);
     double desired;
-=======
-    PIDController drivePID = new PIDController(0.01,0,0);
-    double Desired;
->>>>>>> Stashed changes
     boolean isFinished = false;
     
     public encDriveA(ExampleSubsystem subsystem, double desDis) {
@@ -30,16 +25,10 @@ public class encDriveA extends CommandBase {
 
     @Override
     public void execute() {
-<<<<<<< Updated upstream
         double autoDriveSpeed = drivePID.calculate(driveS.getDrivePos(), desired);
         driveS.tankDrive(autoDriveSpeed, autoDriveSpeed);
         if (Math.abs(drivePID.getPositionError()) < 0.1) {
             driveS.tankDrive(0,0);
-=======
-        double autoDriveSpeed = drivePID.calculate(driveS.getDrivePos(), Desired);
-        driveS.tankDrive(autoDriveSpeed, autoDriveSpeed);
-        if (Math.abs(drivePID.getPositionError()) < 0.1) {
->>>>>>> Stashed changes
             isFinished = true;
         }
     }

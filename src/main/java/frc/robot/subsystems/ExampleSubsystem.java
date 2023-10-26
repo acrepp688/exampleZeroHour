@@ -60,7 +60,6 @@ public class ExampleSubsystem extends SubsystemBase { //create a subsystem
     backLeft.setIdleMode(IdleMode.kBrake);
     backRight.setIdleMode(IdleMode.kBrake);
   }
-<<<<<<< Updated upstream
 
   public void motorCoast() {
     frontLeft.setIdleMode(IdleMode.kCoast);
@@ -69,8 +68,6 @@ public class ExampleSubsystem extends SubsystemBase { //create a subsystem
     backRight.setIdleMode(IdleMode.kCoast);
   }
 
-=======
->>>>>>> Stashed changes
   public void resetEncoders() {
     eLFront.setPosition(0);
     eRFront.setPosition(0);
