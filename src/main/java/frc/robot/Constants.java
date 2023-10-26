@@ -38,5 +38,10 @@ public final class Constants {
     intakeID3 = 22,
     intakeID4 = 23;
   }
+  public static class SolenoidConstants {
+    public static final int
+    LSol_ID = 30,
+    RSol_ID = 31;
+  }
 
 }
